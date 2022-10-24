@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:text="Pesquisa....."
+            style="@android:style/TextAppearance.Holo.Medium">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    style="@android:style/TextAppearance.Holo.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="Pesquisa de satisfação 1."
+                        android:layout_marginLeft="10dp"
+                        style="@android:style/TextAppearance.Holo.Medium"></TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="Pending"
+                        android:layout_marginLeft="85dp"
+                        android:textColor="#FF0000"
+                        style="@android:style/TextAppearance.Holo.Medium"></TextView>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@android:style/TextAppearance.Holo.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:text="É uma string que pode conter tags de estilo. Você precisa executar o escape de apóstrofos e aspas. Para saber mais sobre como ajustar corretamente o estilo e a formatação das strings, consulte Formatação e estilo abaixo. "
+                    style="@android:style/TextAppearance.Holo.Small"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                style="@android:style/TextAppearance.Holo.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:gravity="right"
+                    android:text="Até 31/10/2022"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
