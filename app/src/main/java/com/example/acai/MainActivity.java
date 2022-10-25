@@ -14,7 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.nio.charset.StandardCharsets;
+import java.io.UnsupportedEncodingException;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,15 +29,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button = findViewById(R.id.button);
-        nameTxt = findViewById(R.id.editTextTextPassword);
-        passwordTxt = findViewById(R.id.editTextTextPassword2);
+        nameTxt = findViewById(R.id.name);
+        passwordTxt = findViewById(R.id.password);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 name = nameTxt.getText().toString();
                 password = passwordTxt.getText().toString();
-
                 String authToken = createAuthToken(name, password);
                 checkLoginDetails(authToken);
             }
@@ -75,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
     private String createAuthToken(String name, String password) {
         byte [] data = new byte[0];
         try {
-            data = (name + ":" + password).getBytes(StandardCharsets.UTF_8);
-        } catch (Exception e) {
+            data = (name + ":" + password).getBytes("UTF-8");
+        } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
 

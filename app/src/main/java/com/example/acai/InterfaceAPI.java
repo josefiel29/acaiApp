@@ -5,7 +5,11 @@ import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface InterfaceAPI {
-    @POST("user.accounts/checkLogin")
+    @POST("v1/users/checkLogin")
     Call<String> checkLogin(@Header("Authorization") String authToken);
 
 }
+/*public interface TaskService {
+@GET("/tasks/{id}/subtasks")
+List<Task> listSubTasks(@Path("id") String taskId);
+}*/
