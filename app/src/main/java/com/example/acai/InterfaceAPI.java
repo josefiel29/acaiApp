@@ -5,7 +5,7 @@ import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface InterfaceAPI {
-    @POST("v1/users/checkLogin")
+    @POST("v1/users/signin")
     Call<String> checkLogin(@Header("Authorization") String authToken);
 
 }

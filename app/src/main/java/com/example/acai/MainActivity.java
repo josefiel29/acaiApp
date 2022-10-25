@@ -54,13 +54,13 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
-                Intent intent = new Intent(getApplicationContext(), DisplayMessageActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(getApplicationContext(), DisplayMessageActivity.class);
+//                startActivity(intent);
                 if (response.isSuccessful()) {
                     if (response.body().matches("success")) {
                         Toast.makeText(getApplicationContext(), "Successfully logged in.", Toast.LENGTH_LONG).show();
-                        //Intent intent = new Intent(getApplicationContext(), DisplayMessageActivity.class);
-                        //startActivity(intent);
+                        Intent intent = new Intent(getApplicationContext(), DisplayMessageActivity.class);
+                        startActivity(intent);
 
                         //see shared preferences
                         //next intent
