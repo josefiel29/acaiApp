@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
 
@@ -54,20 +55,21 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
-//                Intent intent = new Intent(getApplicationContext(), DisplayMessageActivity.class);
+                Intent intent = new Intent(getApplicationContext(), DisplayMessageActivity.class);
 //                startActivity(intent);
                 if (response.isSuccessful()) {
-                    if (response.body().matches("success")) {
                         Toast.makeText(getApplicationContext(), "Successfully logged in.", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(getApplicationContext(), DisplayMessageActivity.class);
                         startActivity(intent);
-
                         //see shared preferences
                         //next intent
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Invalid credentials.", Toast.LENGTH_LONG).show();
+                } else {
+                       try {
+                           Toast.makeText(getApplicationContext(), "Server returned error: " + response.errorBody().string(), Toast.LENGTH_LONG).show();
+                           Log.e("ERRO", response.errorBody().string());
+                       } catch (IOException e) {
+                           Toast.makeText(getApplicationContext(), "Server returned unknown error: ", Toast.LENGTH_LONG).show();
+                           e.printStackTrace();
                     }
-
                 }
             }
 
@@ -79,10 +81,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private String createAuthToken(String name, String password) {
+    private String createAuthToken(String register, String password) {
         byte [] data = new byte[0];
         try {
-            data = (name + ":" + password).getBytes("UTF-8");
+            data = (register + ":" + password).getBytes("UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
