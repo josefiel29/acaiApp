@@ -84,7 +84,8 @@ public class MainActivity extends AppCompatActivity {
     private String createAuthToken(String register, String password) {
         byte [] data = new byte[0];
         try {
-            data = (register + ":" + password).getBytes("UTF-8");
+            data = ("{\n    register:"+register + ",\n  password:"+password+"\n}").getBytes("UTF-8");
+            Log.d("Fiel", data.toString());
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
