@@ -6,6 +6,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
@@ -19,6 +20,7 @@ import java.io.UnsupportedEncodingException;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     private Button button;
     private EditText nameTxt, passwordTxt;
     private String name, password;
@@ -52,9 +54,14 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
+                Intent intent = new Intent(getApplicationContext(), DisplayMessageActivity.class);
+                startActivity(intent);
                 if (response.isSuccessful()) {
                     if (response.body().matches("success")) {
                         Toast.makeText(getApplicationContext(), "Successfully logged in.", Toast.LENGTH_LONG).show();
+                        //Intent intent = new Intent(getApplicationContext(), DisplayMessageActivity.class);
+                        //startActivity(intent);
+
                         //see shared preferences
                         //next intent
                     } else {

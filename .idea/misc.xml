@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/talar/AndroidStudioProjects/Acai/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Users/talar/AndroidStudioProjects/Acai/app/src/main/res/layout/activity_display_message.xml" value="0.33" />
+        <entry key="..\:/Users/talar/AndroidStudioProjects/Acai/app/src/main/res/layout/activity_home.xml" value="0.2860215053763441" />
         <entry key="..\:/Users/talar/AndroidStudioProjects/Acai/app/src/main/res/layout/activity_home_recycler_view.xml" value="0.33016304347826086" />
         <entry key="..\:/Users/talar/AndroidStudioProjects/Acai/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/talar/AndroidStudioProjects/Acai/app/src/main/res/layout/activity_questionaire.xml" value="0.36666666666666664" />
